@@ -12,15 +12,14 @@
         "Other"
     ],
     "activationEvents": [
-        "onCommand:extension.sayHello",
-        "onCommand:extension.showCurrentConnection"
+        "onCommand:extension.signIn"
     ],
     "main": "./out/extension",
     "contributes": {
         "commands": [
             {
-                "command": "extension.sayHello",
-                "title": "Sample OpenID: Hello World"
+                "command": "extension.signIn",
+                "title": "Sample OpenID: Sign In"
             }
         ]
     },
