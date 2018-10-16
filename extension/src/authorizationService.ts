@@ -1,4 +1,7 @@
-'use strict'
+'use strict';
+import * as vscode from 'vscode';
+import * as JWT from 'jwt-decode';
+import TokenStore from './tokenStore';
 import { AuthorizationRequest } from "@openid/appauth/built/authorization_request";
 import { AuthorizationServiceConfiguration } from "@openid/appauth/built/authorization_service_configuration";
 import { NodeBasedHandler } from "@openid/appauth/built/node_support/node_request_handler";
@@ -24,9 +27,13 @@ export default class AuthoriationService {
         const configuration = await this.fetchServiceConfiguration(nodeRequester);
         let response = await this.performAuthorization(configuration);
         if (response) {
-            if (response.state === this.state){
+            if (response.state === this.state) {
                 let token = await this.getTokenResponse(response.code, nodeRequester, configuration);
-                console.log(token);
+                if (token.idToken) {
+                    const decoded: any = JWT(token.idToken);
+                    TokenStore.token = token.idToken;
+                    vscode.window.showInformationMessage("You are now logged in as " + decoded.name);
+                }
             } else {
                 console.log('Failed to authorize');
             }

@@ -41,6 +41,8 @@
         "@types/mocha": "^2.2.42"
     },
     "dependencies": {
-        "@openid/appauth": "^0.3.5"
+        "@openid/appauth": "^0.3.5",
+        "@types/jwt-decode": "^2.2.1",
+        "jwt-decode": "^2.2.0"
     }
 }
