@@ -48,6 +48,8 @@
     "dependencies": {
         "@openid/appauth": "^0.3.5",
         "@types/jwt-decode": "^2.2.1",
-        "jwt-decode": "^2.2.0"
+        "@types/node-fetch": "^2.1.2",
+        "jwt-decode": "^2.2.0",
+        "node-fetch": "^2.2.0"
     }
 }
