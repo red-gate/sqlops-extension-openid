@@ -2,10 +2,10 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "SqlOps Extension",
+            "name": "Azure Datastudio Extension",
             "type": "sqlopsExtensionHost",
             "request": "launch",
-            "runtimeExecutable": "sqlops",
+            "runtimeExecutable": "azuredatastudio",
             "args": [
                 "--extensionDevelopmentPath=${workspaceRoot}/extension"
             ],

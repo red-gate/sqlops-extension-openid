@@ -1,13 +1,14 @@
 {
     "name": "sample-openid",
     "displayName": "Sample-OpenID",
-    "description": "Sample extension, demonstrating how to integrate OpenID Auth with SQL Operations Studio extension",
+    "description": "Sample extension, demonstrating how to integrate OpenID Auth with Azure Data Studio extension",
     "version": "0.0.1",
     "publisher": "s",
     "engines": {
         "vscode": "^1.25.0",
         "sqlops": "*"
     },
+    "repository": {},
     "categories": [
         "Other"
     ],
@@ -27,11 +28,13 @@
         "vscode:prepublish": "npm run compile",
         "compile": "tsc -p ./",
         "watch": "tsc -watch -p ./",
-        "postinstall": "node ./node_modules/vscode/bin/install && node ./node_modules/sqlops/bin/install"
+        "postinstall": "node ./node_modules/vscode/bin/install && node ./node_modules/sqlops/bin/install",
+        "package": "vsce package"
     },
     "devDependencies": {
         "typescript": "^2.6.1",
         "vscode": "^1.1.6",
+        "vsce": "^1.35.0",
         "sqlops": "github:anthonydresser/sqlops-extension-sqlops",
         "tslint": "^5.8.0",
         "@types/node": "^7.0.43",
