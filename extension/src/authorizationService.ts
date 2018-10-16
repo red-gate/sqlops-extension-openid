@@ -96,7 +96,7 @@ export default class AuthorizationService {
             this.redirectUri, 
             'openid profile audience:server:client_id:sample-openId', 
             AuthorizationRequest.RESPONSE_TYPE_CODE, 
-            this.state, /* state */ 
+            this.state,
             { 'prompt': 'consent', 'access_type': 'offline' 
         });
         authorizationHandler.performAuthorizationRequest(configuration, request);
