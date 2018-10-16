@@ -244,24 +244,10 @@ ModelManifest.xml
 # FAKE - F# Make
 .fake/
 
-FoundryWebsite/Foundary.Website/App_Data/PublishProfiles/FoundryWebsite - Web Deploy.pubxml
-
-# Our stuff
-.stack-work/
-DevTestDatabaseProvisionerSite/output/*
-.ipynb_checkpoints
-FoundryCommunity/MaskingGeneration/DubiousDataDetector/build/ui.js
-FoundryCommunity/MaskingGeneration/Clobber/clobber.js
-FoundryLabs/Redgate.FoundryLabs.WebContent/fonts
 
 # bower
 bower_components
-FoundryLabs/Redgate.FoundryLabs.WebContent/stats.json
-FoundryLabs/Redgate.FoundryLabs.WebContent/stats.prod.json
 *.pubxml
-FoundryLabs/Redgate.FoundryLabs.Electron/Backend/Redgate.FoundryLabs.Masking.WebContent/package-lock.json
 *.pyc
 .DS_Store
-.Passwords.kdbx.lock
-.vagrant/
-future-devops/spawn/spawn-api-server/.idea/
+backend/SqlOpsExtension.OpenID/.idea/.idea.SqlOpsExtension.OpenID/.idea
