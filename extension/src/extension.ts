@@ -20,7 +20,7 @@ export function activate(context: vscode.ExtensionContext) {
 export function deactivate() {
 }
 
-let clientId: string = 'sample-openId-extension';
+let clientId: string = 'sample-openId';
 let authPort: number = 58805;
 let redirectUri = 'http://localhost:' + authPort;
 let state: string;
@@ -54,7 +54,7 @@ function signIn(){
 }
 
 async function fetchServiceConfiguration(nodeRequester: NodeRequestor, configuration: AuthorizationServiceConfiguration) {
-    await AuthorizationServiceConfiguration.fetchFromIssuer("http://authentication.sampleopenid.com:30252", nodeRequester).then(response => {
+    await AuthorizationServiceConfiguration.fetchFromIssuer("http://127.0.0.1:80", nodeRequester).then(response => {
         console.log('Fetched service configuration', response);
         configuration = response;
     }).catch(error => {
