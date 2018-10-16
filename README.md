@@ -2,6 +2,8 @@
 
 A sample project, demonstrating how to integrate OpenID Auth into Azure Data Studio Extension
 
+![skeletonauth](https://user-images.githubusercontent.com/6816380/47018821-82af1780-d14d-11e8-98ab-8eb9e5f831ff.gif)
+
 ## Prerequisites
 
 * NodeJS
