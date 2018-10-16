@@ -41,4 +41,6 @@ sqlops-extension-openid/auth-dex
 
 ## Using authentication in the extension
 
-To test authentication you can try to sign in by using Command Palette: `Cmd/Ctrl + Shift + P: Sample OpenID: Sign in`. This will prompt you to sing in and generate a token that will be displayed in the extension for you.
+To test authentication you can try to sign in by using Command Palette: `Cmd/Ctrl + Shift + P: Sample OpenID: Sign in`.
+
+Once you sing in you can try: `Cmd/Ctrl + Shift + P: Perform Restricted Action`.

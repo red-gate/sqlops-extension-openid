@@ -13,7 +13,8 @@
         "Other"
     ],
     "activationEvents": [
-        "onCommand:extension.signIn"
+        "onCommand:extension.signIn",
+        "onCommand:extension.performRestrictedAction"
     ],
     "main": "./out/extension",
     "contributes": {
@@ -21,6 +22,10 @@
             {
                 "command": "extension.signIn",
                 "title": "Sample OpenID: Sign In"
+            },
+            {
+                "command": "extension.performRestrictedAction",
+                "title": "Sample OpenID: Perform Restricted Action"
             }
         ]
     },

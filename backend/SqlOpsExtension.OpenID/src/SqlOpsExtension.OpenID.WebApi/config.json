@@ -3,7 +3,7 @@
   {
     "oidc": {
       "clientid":"sample-openId",
-      "authority":"http://auth-sample-openid-dex:5556"
+      "authority":"http://127.0.0.1:80"
     }
   }
 }
