@@ -15,7 +15,7 @@ import { BaseTokenRequestHandler } from "@openid/appauth/built/token_request_han
 import { TokenResponse } from '@openid/appauth/built/token_response';
 import { AuthorizationResponse } from "@openid/appauth/built/authorization_response";
 
-export default class AuthoriationService {
+export default class AuthorizationService {
     
     private readonly clientId: string = 'sample-openId';
     private readonly authPort: number = 58805;
@@ -23,12 +23,12 @@ export default class AuthoriationService {
     private state!: string;
 
     async authorize(): Promise<boolean> {
-        const nodeRequester = new NodeRequestor();
-        const configuration = await this.fetchServiceConfiguration(nodeRequester);
+        const nodeRequestor = new NodeRequestor();
+        const configuration = await this.fetchServiceConfiguration(nodeRequestor);
         let response = await this.performAuthorization(configuration);
         if (response) {
             if (response.state === this.state) {
-                let token = await this.getTokenResponse(response.code, nodeRequester, configuration);
+                let token = await this.getTokenResponse(response.code, nodeRequestor, configuration);
                 if (token.idToken) {
                     const decoded: any = JWT(token.idToken);
                     TokenStore.token = token.idToken;

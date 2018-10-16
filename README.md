@@ -43,4 +43,4 @@ sqlops-extension-openid/auth-dex
 
 To test authentication you can try to sign in by using Command Palette: `Cmd/Ctrl + Shift + P: Sample OpenID: Sign in`.
 
-Once you sing in you can try: `Cmd/Ctrl + Shift + P: Perform Restricted Action`.
+Once you sign in you can try: `Cmd/Ctrl + Shift + P: Perform Restricted Action`.

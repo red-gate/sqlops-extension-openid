@@ -2,7 +2,7 @@
 
 import * as vscode from 'vscode';
 import fetch from 'node-fetch'
-import AuthoriationService from './authorizationService';
+import AuthorizationService from './authorizationService';
 import TokenStore from './tokenStore';
 
 export function activate(context: vscode.ExtensionContext) {
@@ -15,7 +15,7 @@ export function deactivate() {
 
 
 async function signIn(){
-    let authService = new AuthoriationService();
+    let authService = new AuthorizationService();
     await authService.authorize();
 }
 
