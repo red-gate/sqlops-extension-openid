@@ -1,0 +1,18 @@
+version: "3"
+services:
+  dex:
+    image: rgfoundry/dex:test
+    ports:
+     - "80:80"
+     - "443:443"
+    depends_on:
+      - postgres
+    command: ["/wait-for-it.sh", "postgres:5432", "--", "dex", "serve", "/config.yaml"]
+  postgres:
+    image: postgres
+    environment:
+      - POSTGRES_USER=dex
+      - POSTGRES_PASSWORD=secretPassword1
+      - POSTGRES_DB=dex_db
+    ports:
+     - "5432:5432"

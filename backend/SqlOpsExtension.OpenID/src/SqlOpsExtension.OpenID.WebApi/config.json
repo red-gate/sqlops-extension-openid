@@ -1,0 +1,9 @@
+﻿{
+  "auth":
+  {
+    "oidc": {
+      "clientid":"sample-openId",
+      "authority":"http://127.0.0.1:80"
+    }
+  }
+}

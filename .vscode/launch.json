@@ -1,0 +1,21 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Azure Datastudio Extension",
+            "type": "sqlopsExtensionHost",
+            "request": "launch",
+            "runtimeExecutable": "azuredatastudio",
+            "args": [
+                "--extensionDevelopmentPath=${workspaceRoot}/extension"
+            ],
+            "stopOnEntry": false,
+            "sourceMaps": true,
+            "outFiles": [
+                "${workspaceRoot}/extension/out/**/*.js"
+            ],
+            "preLaunchTask": "npm-build-extension",
+            "timeout": 250000
+        }
+    ]
+}

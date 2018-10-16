@@ -1,0 +1,74 @@
+# The base path of dex and the external name of the OpenID Connect service.
+# This is the canonical URL that all clients MUST use to refer to dex. If a
+# path is provided, dex's HTTP service will listen at a non-root URL.
+issuer: http://127.0.0.1:80
+
+# The storage configuration determines where dex stores its state. Supported
+# options include SQL flavors and Kubernetes third party resources.
+#
+# See the storage document at Documentation/storage.md for further information.
+storage:
+  type: postgres
+  config:
+    database: dex_db
+    user: dex
+    password: secretPassword1
+    host: postgres:5432
+    ssl:
+      mode: disable
+
+# Configuration for the HTTP endpoints.
+web:
+  http: 0.0.0.0:80
+  # Uncomment for HTTPS options.
+  # https: 127.0.0.1:5554
+  # tlsCert: /etc/dex/tls.crt
+  # tlsKey: /etc/dex/tls.key
+
+# Configuration for telemetry
+telemetry:
+  http: 0.0.0.0:5558
+
+# Uncomment this block to enable the gRPC API. This values MUST be different
+# from the HTTP endpoints.
+# grpc:
+#   addr: 127.0.0.1:5557
+#  tlsCert: examples/grpc-client/server.crt
+#  tlsKey: examples/grpc-client/server.key
+#  tlsClientCA: /etc/dex/client.crt
+
+# Uncomment this block to enable configuration for the expiration time durations.
+# expiry:
+#   signingKeys: "6h"
+#   idTokens: "24h"
+
+# Options for controlling the logger.
+# logger:
+#   level: "debug"
+#   format: "text" # can also be "json"
+
+# Uncomment this block to control which response types dex supports. For example
+# the following response types enable the implicit flow for web-only clients.
+# Defaults to ["code"], the code flow.
+# oauth2:
+#   responseTypes: ["code", "token", "id_token"]
+
+# Instead of reading from an external storage, use this list of clients.
+#
+# If this option isn't chosen clients may be added through the gRPC API.
+staticClients:
+ - id: sample-openId
+   public: true
+   name: 'Sample OpenID'
+   redirectURIs:
+   - urn:ietf:wg:oauth:2.0:oob
+   secret: sampleOpenIdExtensionSecret
+
+connectors:
+    - type: github
+      id: github
+      name: GitHub
+      config:
+        clientID: 0ad28a44562f45cd56a5
+        clientSecret: 33c6b7c82d2b18b90ed337f32261783e64a3bdb9
+        redirectURI: http://127.0.0.1:80/callback

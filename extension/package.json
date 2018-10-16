@@ -1,0 +1,55 @@
+{
+    "name": "sample-openid",
+    "displayName": "Sample-OpenID",
+    "description": "Sample extension, demonstrating how to integrate OpenID Auth with Azure Data Studio extension",
+    "version": "0.0.1",
+    "publisher": "s",
+    "engines": {
+        "vscode": "^1.25.0",
+        "sqlops": "*"
+    },
+    "repository": {},
+    "categories": [
+        "Other"
+    ],
+    "activationEvents": [
+        "onCommand:extension.signIn",
+        "onCommand:extension.performRestrictedAction"
+    ],
+    "main": "./out/extension",
+    "contributes": {
+        "commands": [
+            {
+                "command": "extension.signIn",
+                "title": "Sample OpenID: Sign In"
+            },
+            {
+                "command": "extension.performRestrictedAction",
+                "title": "Sample OpenID: Perform Restricted Action"
+            }
+        ]
+    },
+    "scripts": {
+        "vscode:prepublish": "npm run compile",
+        "compile": "tsc -p ./",
+        "watch": "tsc -watch -p ./",
+        "postinstall": "node ./node_modules/vscode/bin/install && node ./node_modules/sqlops/bin/install",
+        "package": "vsce package"
+    },
+    "devDependencies": {
+        "typescript": "^2.6.1",
+        "vscode": "^1.1.6",
+        "vsce": "^1.35.0",
+        "sqlops": "github:anthonydresser/sqlops-extension-sqlops",
+        "tslint": "^5.8.0",
+        "@types/node": "^7.0.43",
+        "@types/mocha": "^2.2.42"
+    },
+    "dependencies": {
+        "@openid/appauth": "^0.3.5",
+        "@types/jwt-decode": "^2.2.1",
+        "@types/node-fetch": "^2.1.2",
+        "jwt-decode": "^2.2.0",
+        "node-fetch": "^2.2.0"
+    }
+}
