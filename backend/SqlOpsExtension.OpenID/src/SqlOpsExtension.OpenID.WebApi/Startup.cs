@@ -34,7 +34,6 @@ namespace SqlOpsExtension.OpenID.WebApi
                 .AddJwtBearer(options =>
                 {
                     options.Authority = Configuration["auth:oidc:authority"];
-                    options.ClaimsIssuer = "sampleopenid-auth";
                     options.RequireHttpsMetadata = false;
                     options.TokenValidationParameters = new TokenValidationParameters
                     {
