@@ -61,7 +61,7 @@ staticClients:
    public: true
    name: 'Sample OpenID'
    redirectURIs:
-   - urn:ietf:wg:oauth:2.0:oob
+   - http://localhost:58805
    secret: sampleOpenIdExtensionSecret
 
 connectors:
@@ -69,6 +69,6 @@ connectors:
       id: github
       name: GitHub
       config:
-        clientID: 0ad28a44562f45cd56a5
-        clientSecret: 33c6b7c82d2b18b90ed337f32261783e64a3bdb9
+        clientID: <CLIENT_ID>
         redirectURI: http://127.0.0.1:80/callback
+        clientSecret: <CLIENT_SECRET>

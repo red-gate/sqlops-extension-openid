@@ -31,6 +31,24 @@ sqlops-extension-openid/backend/SqlOpsExtension.OpenID
 
 ## How to run Auth
 
+Create an [OAuth Github App](https://github.com/settings/developers).
+
+In `auth-dex/config.yaml` fill in your connector values
+
+```yaml
+connectors:
+    - type: github
+      id: github
+      name: GitHub
+      config:
+        clientID: <CLIENT_ID>
+        redirectURI: http://127.0.0.1:80/callback
+        clientSecret: <CLIENT_SECRET>
+
+```
+
+Build the docker image and run docker-compose
+
 ```bash
 > pwd
 sqlops-extension-openid/auth-dex
