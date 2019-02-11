@@ -37,18 +37,19 @@
         "package": "vsce package"
     },
     "devDependencies": {
-        "typescript": "^2.6.1",
-        "vscode": "^1.1.6",
-        "vsce": "^1.35.0",
+        "@types/mocha": "^2.2.42",
+        "@types/node": "^7.0.43",
         "sqlops": "github:anthonydresser/sqlops-extension-sqlops",
         "tslint": "^5.8.0",
-        "@types/node": "^7.0.43",
-        "@types/mocha": "^2.2.42"
+        "typescript": "^2.6.1",
+        "vsce": "^1.35.0",
+        "vscode": "^1.1.29"
     },
     "dependencies": {
         "@openid/appauth": "^0.3.5",
         "@types/jwt-decode": "^2.2.1",
         "@types/node-fetch": "^2.1.2",
+        "isemail": "^3.2.0",
         "jwt-decode": "^2.2.0",
         "node-fetch": "^2.2.0"
     }
